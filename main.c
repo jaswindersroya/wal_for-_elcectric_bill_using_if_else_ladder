@@ -1,150 +1,28 @@
-//max of 6 numbers
+//find electric bill
+
 #include <stdio.h>
 
 int main()
 {
-    int a,b,c,d,e,f;
-    printf("enter 6 integer values");
-    scanf("%d%d%d%d%d%d",&a,&b,&c,&d,&e,&f);
-    if(a>b)
-    {
-        if(a>c)
-        {
-            if(a>d)
-            {
-                if(a>e)
-                {
-                    if(a>f)
-                    printf(a);
-                    else
-                    printf(f);
-                }
-                    else
-                    if(e>f)
-                    printf(e);
-                    else
-                    printf(f);
-                }
-                else
-                if(d>e){
-                    if(d>f)
-                    printf(d);
-                    else
-                    printf(f);
-                }
-                else
-                if(e>f)
-                printf(e);
-                else
-                printf(f);
-            }
-            else
-            if(d>e)
-            {
-                if(d>f)
-                printf(d);
-                else
-                printf(f);
-            }
-            else
-            if(e>f)
-            printf(e);
-            else
-            printf(f);
-        }
-        else 
-        if(c>d)
-        {
-            if(c>e)
-            {
-                if(c>f)
-                printf(c);
-                else
-                printf(f);
-            }
-            else
-            if(e>f)
-            {
-                if(e>f)
-                printf(e);
-                else
-                printf(f);
-            }
-            else
-            if(d>e)
-            {
-                if(d>f)
-                printf(d);
-                else
-                printf(f);
-            }
-            else
-            if(e>f)
-            printf(e);
-            else
-            printf(f);
-        }
-
-    }
+    //declare variable
+    int units;
+    float bill,tax,gross_amount;
+    //user input
+    printf("enter the number of units");
+    scanf("%d",&units);
+    
+    if(units <= 200)
+    bill = units * 2;
+    else if(units <= 400)
+    bill = units * 3;
+    else if(units <= 600)
+    bill = units * 4;
     else
-    if(b>c)
-    {
-        if(b>d)
-        {
-            if(b>e)
-            {
-                if(b>f)
-                printf(b);
-                else
-                printf(f);
-            }
-            else
-            if(e>f)
-            printf(e);
-            else
-            printf(f);
-        }
-        else
-        if(d>e){
-            if(d>f)
-            printf(d);
-            else
-            printf(f);
-        }
-        else
-        if(e>f)
-        printf(e);
-        else
-        printf(f);
-    }
-    else
-    if(c>d)
-    {
-        if(c>e)
-        {
-            if(c>f)
-            printf(c);
-            else
-            printf(f);
-        }
-        else
-        if(e>f)
-        printf(e);
-        else
-        printf(f);
-    }
-    else
-    if(d>e)
-    {
-        if(d>f)
-        printf(d);
-        else
-        printf(f);
-    }
-    else
-    if(e>f)
-    printf(e);
-    else
-    printf(f);
-    }
+    bill = units * 5;
+    
+    tax = bill * 10/100;
+    gross_amount = tax + bill;
+    printf("Payable amount is %f for this bill", gross_amount);
+    
+    
 }
